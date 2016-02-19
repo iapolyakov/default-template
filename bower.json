@@ -1,0 +1,22 @@
+{
+  "name": "default-template",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Polyakov Ivan"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/iapolyakov/default-template",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "normalize-css": "normalize.css#^3.0.3"
+  }
+}
