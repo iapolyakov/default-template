@@ -22,12 +22,11 @@ npm i bower -g
 ```sh
 git clone https://github.com/iapolyakov/default-template.git
 ```
-* Type in the console
-**Installs server-side dependencies from npm**
+* Installs server-side dependencies from npm
 ```sh
 npm install
 ```
-**Installs packages from bower**
+* Installs packages from bower
 ```sh
 bower install
 ```
