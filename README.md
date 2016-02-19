@@ -10,13 +10,26 @@
 
 ## Getting started
 * Install [Node.js](http://nodejs.org/) if you don't have it
-* Install [Gulp](http://gulpjs.com/) (npm i gulpjs/gulp#4.0 -g)
-* Install [Bower](http://bower.io/)	(npm i bower -g)
-* Then copy the template in a folder (git clone https://github.com/iapolyakov/default-template.git)
-* Type in the console
+* Install [Gulp](http://gulpjs.com/)
 ```sh
-npm install //Installs server-side dependencies from npm
-bower install //Installs packages from bower
+npm i gulpjs/gulp#4.0 -g
+```
+* Install [Bower](http://bower.io/)
+```sh
+npm i bower -g
+```
+* Then copy the template in a folder
+```sh
+git clone https://github.com/iapolyakov/default-template.git
+```
+* Type in the console
+**Installs server-side dependencies from npm**
+```sh
+npm install
+```
+**Installs packages from bower**
+```sh
+bower install
 ```
 
 ## CLI Commands
