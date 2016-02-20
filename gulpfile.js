@@ -9,11 +9,13 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const uglify = require('gulp-uglify');
+const notify = require('gulp-notify');
 const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 const browserSync = require('browser-sync').create();
 const cached = require('gulp-cached');
 const path = require('path');
+const combiner = require('stream-combiner2');
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
@@ -31,7 +33,11 @@ gulp.task('styles', function(){
 	return gulp.src('src/style/main.scss')
 		.pipe(gulpIf(isDevelopment, sourcemaps.init()))
 		.pipe(sass())
-		.pipe(autoprefixer())
+		.on('error', notify.onError())
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions','> 1%','ie 9'],
+			cascade: false
+		}))
 		.pipe(cssnano())
 		.pipe(gulpIf(isDevelopment, sourcemaps.write()))
 		.pipe(rename({suffix: '.min'}))
@@ -45,7 +51,7 @@ gulp.task('js', function(){
 		.pipe(uglify())
 		.pipe(gulpIf(isDevelopment, sourcemaps.write()))
 		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest('public'));
+		.pipe(gulp.dest('public'));	
 });
 
 gulp.task('images', function(){
