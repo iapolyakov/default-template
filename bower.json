@@ -18,5 +18,6 @@
   "dependencies": {
     "jquery": "^2.2.0",
     "normalize-css": "normalize.css#^3.0.3"
-  }
+  },
+  "devDependencies": {}
 }
