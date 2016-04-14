@@ -16,6 +16,7 @@ const browserSync = require('browser-sync').create();
 const cached = require('gulp-cached');
 const path = require('path');
 const combiner = require('stream-combiner2');
+const usemin = require('gulp-usemin');
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
@@ -25,6 +26,10 @@ gulp.task('clean', function(){
 
 gulp.task('html', function(){
 	return gulp.src('src/index.html')
+		.pipe(usemin({
+			css: [cssnano()],
+			js: [uglify()]
+		}))
 		.pipe(rigger())
 		.pipe(gulp.dest('public'));
 });
